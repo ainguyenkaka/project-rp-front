@@ -1,0 +1,77 @@
+<div class="container p-0 m-t-30">
+    <div class="row card m-0 m-b-1 p-5">
+        <strong>News found: </strong>
+      </div>
+  <div *ngFor="let news of newsList" class="row card m-0 m-b-5">
+    <div class="col-md-2 p-0 ">
+      <img [src]="news.imgUrl" alt="">
+    </div>
+    <div class="col-md-7 p-t-15">
+      <a routerLink="">{{news.title}} </a>
+      <h6>In order to be a designer who has professional skills and effective products, you should ...</h6>
+      <h5>
+        <i class="zmdi zmdi-time zmdi-hc-fw"></i>
+        <span>{{news.date}}</span>
+      </h5>
+
+    </div>
+    <div class="col-md-3 text-center p-t-30">
+      <button class="btn btn-facebook btn-round  btn-sm">{{news.likes}} likes</button>
+      <button class="btn btn-facebook btn-round  btn-sm">Share</button>
+    </div>
+  </div>
+
+  <div class="row card m-0 m-t-30 m-b-1 p-5">
+    <strong>Jobs found: </strong>
+  </div>
+  <div *ngFor="let job of jobList" class="row card m-0 m-b-5 p-5">
+      <div class="col-md-4">
+        <div class="row p-l-10">
+          <a routerLink="">{{job.title}}</a>
+        </div>
+        <div class="row p-l-10">
+          <button *ngIf="job.isFullTime" class="btn btn-success btn-round btn-sm">Full Time</button>
+          <button *ngIf="!job.isFullTime" class="btn btn-warning btn-round btn-sm">Part Time</button>
+  
+          <button class="btn btn-info btn-round btn-sm">{{job.group.name}}</button>
+        </div>
+      </div>
+      <div class="col-md-3 p-t-5">
+          <h5>
+              <i class="zmdi zmdi-time zmdi-hc-fw"></i>
+              <span>{{job.date}}</span>
+          </h5>
+        <h5>
+            <b>
+                <i class="zmdi zmdi-money zmdi-hc-fw"></i>
+                <span>{{job.salary}}</span>
+            </b>
+        </h5>
+      </div>
+      <div class="col-md-3 p-t-30">
+        <i class="zmdi zmdi-pin zmdi-hc-fw"></i>
+        <span>{{job.location}}</span>
+      </div>
+      <div class="col-md-1 p-t-10">
+        <button *ngIf="job.isApplied" class="btn btn-success btn-sm">Is applied
+          <i class="zmdi zmdi-check"></i>
+        </button>
+  
+        <button *ngIf="!job.isApplied" class="btn btn-info btn-sm">Apply now
+          <i class="zmdi zmdi-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <div>
+        <nav class="pull-right" aria-label="pagination">
+            <ul class="pagination">
+              <li><a routerLink="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+              <li class="active"><a routerLink="#">1 <span class="sr-only">(current)</span></a></li>
+              <li><a routerLink="#">2</a></li>
+              <li><a routerLink="#">3</a></li>
+              <li><a routerLink="#" aria-label="Previous"><span aria-hidden="true">&raquo;</span></a></li>
+            </ul>
+          </nav>
+    </div>
+</div>

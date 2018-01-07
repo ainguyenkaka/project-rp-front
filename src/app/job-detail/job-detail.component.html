@@ -1,0 +1,142 @@
+<div class="container p-0 m-t-30">
+  <div class="row card m-0 m-b-10">
+    <div class="col-md-12">
+      <div class="row p-10">
+        <div class="col-md-4">
+          <div class="row p-l-10">
+            <strong>
+                <a routerLink="/job/detail">{{job.title}}</a>
+            </strong>
+
+          </div>
+          <div class="row p-l-10">
+            <button *ngIf="job.isFullTime" class="btn btn-success btn-round btn-sm">Full Time</button>
+            <button *ngIf="!job.isFullTime" class="btn btn-warning btn-round btn-sm">Part Time</button>
+
+            <button class="btn btn-info btn-round btn-sm">{{job.group.name}}</button>
+            <div>
+              <div *ngFor="let tag of job.tags" class="chip">
+                {{tag.content}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 p-t-5">
+          <h5>
+            <i class="zmdi zmdi-time zmdi-hc-fw"></i>
+            <span>{{job.date}}</span>
+          </h5>
+          <h5>
+            <strong>
+              <i class="zmdi zmdi-money zmdi-hc-fw"></i>
+              <span>{{job.salary}}</span>
+            </strong>
+          </h5>
+        </div>
+        <div class="col-md-3 p-t-30">
+          <i class="zmdi zmdi-pin zmdi-hc-fw"></i>
+          <span>{{job.location}}</span>
+        </div>
+        <div class="col-md-3 p-t-10">
+          <button *ngIf="job.isApplied" class="btn btn-success btn-sm">Is applied
+            <i class="zmdi zmdi-check"></i>
+          </button>
+
+          <button *ngIf="!job.isApplied" class="btn btn-info btn-sm">Apply now
+            <i class="zmdi zmdi-arrow-right"></i>
+          </button>
+          <div>
+            <button class="btn btn-facebook btn-round  btn-sm">{{job.likes}} likes</button>
+            <button class="btn btn-facebook btn-round  btn-sm">Share</button>
+          </div>
+        </div>
+      </div>
+      <div class="p-20">
+          <div class="row">
+              <hr/>
+              <span>Description: </span>
+              <p>
+                  &emsp; We’re looking for an experienced full stack developer to help kickstart our new new social media platform for fitness enthusiasts. The project is based on the MEAN (MongoDB, Express.js, AngularJS, and Node.js) stack. Java is also required.
+              </p>
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                  <hr/>
+                  <span>Requirements:</span>
+                  <p>
+                      - Familiarity with API Creation and RESTful services
+                  </p>
+                  <p>
+                      - MEAN (MongoDB, Express.js,AngularJS, and Node.js) Stack
+                  </p>
+                  <p>
+                      - Translation of designer mock-ups and wireframes into front-end code
+                  </p>
+                  <p>
+                      - Solid foundation in data structures, algorithms, and system design
+                  </p>
+                  <p>
+                      - Database administration and management of a hosting environment
+                  </p>
+              </div>
+              <div class="col-md-6">
+                  <hr/>
+                  <span>Benefits:</span>
+                  <p>
+                      - Competitive base salary plus quarterly bonuses
+                  </p>
+                  <p>
+                      - An entrepreneurial environment with high growth potential 401(k)
+                  </p>
+                  <p>
+                      - Medical, dental and vision
+                  </p>
+                  <p>
+                      - $100 transit subsidy and pre-tax transit and parking benefits
+                  </p>
+                  <p>
+                      - 3 weeks vacation and a fully stocked kitchen
+                  </p>
+              </div>
+          </div>
+      </div>
+      <div class="row p-20">
+        <hr/>
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+          <div *ngFor="let comment of job.comments">
+            <div class="row">
+              <div class="col-md-1 p-t-5">
+                <img [src]="comment.author.avatarUrl" alt="" class="img-circle max-w-40 m-r-10 ">
+              </div>
+              <div class="col-md-8">
+                <h6>{{comment.content}}</h6>
+                <h6 class=" md-text-grey">{{comment.author.name}}</h6>
+              </div>
+            </div>
+            <hr/>
+          </div>
+          <div class="row">
+            <form class="form-horizontal">
+              <div class="form-group is-empty col-md-10 col-xs-10 p-t-0">
+                <label for="name" class="col-md-2 control-label">Comment</label>
+                <div class="col-md-10">
+                  <input type="text" class="form-control" id="name" value="I also want to be">
+                </div>
+              </div>
+              <div class="form-group col-md-1 col-xs-1 p-t-0">
+                <button type="button" class="btn btn-info btn-fab animate-fab btn-fab-sm">
+                  <i class="zmdi zmdi-comment-text"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
